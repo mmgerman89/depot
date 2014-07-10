@@ -105,6 +105,10 @@
   color: #bfb;
   font-size: small;
 }
+
+#side p {
+  color: white;
+}
 /* END:mainlayout */
 
 /* An entry in the store catalog */
@@ -152,4 +156,8 @@
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+}
+
+#store .entry form, #store .entry form div {
+  display: inline;
 }

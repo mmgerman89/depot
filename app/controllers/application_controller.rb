@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :date_loaded
+  helper_method :date_loaded, :counter_loaded
   def date_loaded
-    Time.now
+    t = Time.now
+    time = "#{t.hour}:#{t.min} - #{t.day}/#{t.month}/#{t.year}"
   end
   
   private
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
       cart = Cart.create
       session[:cart_id] = cart.id
       cart
+    end
+    
+    def counter_loaded
+      session[:counter]
     end
 end
