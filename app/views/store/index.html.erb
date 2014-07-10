@@ -3,9 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
-<% if counter_loaded > 5 %>
-	<p><%= pluralize(counter_loaded,' hit') %></p>
-<% end %>
+	<p><%= @message %></p>
 <br />
 <% @products.each do |product| %>
 	<div class="entry">

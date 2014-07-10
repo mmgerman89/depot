@@ -16,6 +16,10 @@ class ApplicationController < ActionController::Base
     end
     
     def counter_loaded
-      session[:counter]
+      if session[:counter] > 5
+        return session[:counter]
+      else
+        return nil
+      end
     end
 end
