@@ -65,4 +65,21 @@ class ProductTest < ActiveSupport::TestCase
                             price: 15.50)
     assert product.invalid?, "#{product.title} is too short"
   end
+  
+  test "product URL must be unique" do
+    product = Product.new(  title: "A Title! 2",
+                            description: "Desc",
+                            image_url: products(:ruby).image_url,
+                            price: 12.50)
+                                             
+    assert product.invalid?, "URL must be unique"
+  end
+  
+  test "product price must be equal or less than 1000" do
+    product = Product.new(  title: "A Title! 2",
+                            description: "Desc",
+                            image_url: "url_one.png",
+                            price: 1001)
+    assert product.invalid?, "price must be equal or less than 1000"
+  end
 end

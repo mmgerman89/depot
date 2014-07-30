@@ -12,6 +12,12 @@ two:
   image_url: MyString
   price: 9.99
 
+sol:
+  title: Sol te quiero!
+  description: Mi amor! No me hagas extrañarte tanto!
+  image_url: sol.png
+  price: 99.99
+
 ruby:
   title: Programming Ruby 1.9
   description:

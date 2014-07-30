@@ -47,7 +47,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created.') }
+        format.html { redirect_to(@line_item.cart) }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
@@ -77,9 +77,10 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
+    @cart = current_cart
 
     respond_to do |format|
-      format.html { redirect_to(line_items_url) }
+      format.html { redirect_to(@cart, notice: "Item was successfully delete.") }
       format.xml  { head :ok }
     end
   end
