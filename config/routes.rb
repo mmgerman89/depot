@@ -6,6 +6,8 @@ Depot::Application.routes.draw do
   get "store/index"
 
   resources :products
+  
+  match "line_items/decrement", to: 'line_items#decrement', method: :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

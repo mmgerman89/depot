@@ -179,12 +179,17 @@
 /* Styles for the cart in the sidebar */
 #cart, #cart table {
   font-size: smaller;
-  color:
-  white;
+  color: white;
 }
 #cart table {
   border-top:
   1px dotted #595;
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
+}
+
+.product_image {
+  border: 1px dotted #595;
+  float: left;
+  margin: 5px;
 }
