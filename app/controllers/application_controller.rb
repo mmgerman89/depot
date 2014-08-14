@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :date_loaded, :counter_loaded
   def date_loaded
     t = Time.now
-    time = "#{t.hour}:#{t.min} - #{t.day}/#{t.month}/#{t.year}"
+    time = "#{'%02d' % t.hour}:#{'%02d' % t.min} - #{'%02d' % t.day}/#{'%02d' % t.month}/#{t.year}"
   end
   
   private
