@@ -7,7 +7,9 @@ Depot::Application.routes.draw do
 
   get "store/index"
 
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
   
   match "line_items/decrement", to: 'line_items#decrement', method: :post
 
